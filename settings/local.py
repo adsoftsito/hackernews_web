@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
 ]
 
 ROOT_URLCONF = 'hackernews.urls'
@@ -78,10 +79,10 @@ WSGI_APPLICATION = 'hackernews.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'wpqvsdmk',
-        'USER': 'wpqvsdmk',
-        'PASSWORD': 'cyeOfsIxKY1qKtgoIhkiGQUZN89s44_R',
-        'HOST': 'heffalump.db.elephantsql.com',
+        'NAME': 'hackernews', #'wpqvsdmk',
+        'USER': 'm',   #'wpqvsdmk',
+        'PASSWORD': 'adsoft', #'cyeOfsIxKY1qKtgoIhkiGQUZN89s44_R',
+        'HOST': 'localhost',  #'heffalump.db.elephantsql.com',
         'PORT': 5432,
     }
 }
@@ -127,4 +128,14 @@ STATIC_URL = '/static/'
 
 GRAPHENE = {
     'SCHEMA': 'hackernews.schema.schema',
+    'MIDDLEWARE': [
+        'graphql_jwt.middleware.JSONWebTokenMiddleware',
+    ],
 }
+
+
+AUTHENTICATION_BACKENDS = [
+    'graphql_jwt.backends.JSONWebTokenBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
