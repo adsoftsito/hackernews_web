@@ -90,11 +90,11 @@ DEV_PORT = config("DEV_PORT", default=5432)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': DEV_DATABASE, #'wpqvsdmk', # hackernews
-        'USER': DEV_USER, # 'wpqvsdmk', #m
-        'PASSWORD': DEV_PASSWORD, #'cyeOfsIxKY1qKtgoIhkiGQUZN89s44_R', #adsoft
-        'HOST': DEV_HOST, # 'heffalump.db.elephantsql.com', #localhost
-        'PORT': DEV_PORT, #5432,
+        'NAME': DEV_DATABASE, 
+        'USER': DEV_USER, 
+        'PASSWORD': DEV_PASSWORD, 
+        'HOST': DEV_HOST, 
+        'PORT': DEV_PORT, 
     }
 }
 
